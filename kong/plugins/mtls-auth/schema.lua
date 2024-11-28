@@ -1,7 +1,7 @@
 local typedefs = require "kong.db.schema.typedefs"
 
 return {
-    name = "mtls-auth",
+    name = "mtls-test",
     fields = {
         { consumer = typedefs.no_consumer },
         { protocols = typedefs.protocols_http },
