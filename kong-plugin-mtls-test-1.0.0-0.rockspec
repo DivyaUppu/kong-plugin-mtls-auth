@@ -8,21 +8,21 @@ version = package_version .. "-" .. rockspec_revision
 supported_platforms = { "linux", "macosx" }
 
 source = {
-  url = "git://github.com/DivyaUppu/kong-plugin-mtls-auth",
-  dir = "kong-plugin-mtls-auth"
+  url = "git://github.com/DivyaUppu/kong-plugin-mtls-test",
+  dir = "kong-plugin-mtls-test"
 }
 
 description = {
   summary = "Kong Gateway plugin used to authenticate clients using mTLS",
   detailed = [[
-      kong-plugin-mtls-auth is a Kong Gateway plugin for authenticating clients using mTLS.
+      kong-plugin-mtls-test is a Kong Gateway plugin for authenticating clients using mTLS.
 	  It is similar (but simpler) than the mTLS plugin provided in Kong Enterprise edition.
       
 	  Information extracted from the mTLS client certificate can be made available using headers for
 	  the upstream service, or used by other plugins (such as the kong-plugin-mtls-acl plugin)
 	  to further limit access. 
   ]],
-  homepage = "https://github.com/DivyaUppu/kong-plugin-mtls-auth",
+  homepage = "https://github.com/DivyaUppu/kong-plugin-mtls-test",
   license = "Apache 2.0",
 }
 
