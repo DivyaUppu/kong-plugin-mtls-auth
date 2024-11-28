@@ -8,8 +8,7 @@ version = package_version .. "-" .. rockspec_revision
 supported_platforms = { "linux", "macosx" }
 
 source = {
-  url = "git://github.com/callistaenterprise/kong-plugin-mtls-auth",
-  tag = "v1.0.0",
+  url = "git://github.com/DivyaUppu/kong-plugin-mtls-auth",
   dir = "kong-plugin-mtls-auth"
 }
 
@@ -23,7 +22,7 @@ description = {
 	  the upstream service, or used by other plugins (such as the kong-plugin-mtls-acl plugin)
 	  to further limit access. 
   ]],
-  homepage = "https://github.com/callistaenterprise/kong-plugin-mtls-auth",
+  homepage = "https://github.com/DivyaUppu/kong-plugin-mtls-auth",
   license = "Apache 2.0",
 }
 
