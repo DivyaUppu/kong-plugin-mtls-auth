@@ -1,4 +1,4 @@
-local plugin_name = "mtls-auth"
+local plugin_name = "mtls-test"
 local package_name = "kong-plugin-"..plugin_name
 local package_version = "1.0.0"
 local rockspec_revision = "0"
