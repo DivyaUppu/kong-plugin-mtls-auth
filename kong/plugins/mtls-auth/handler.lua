@@ -1,4 +1,3 @@
-local BasePlugin = require("kong.plugins.base_plugin")
 local set_header = kong.service.request.set_header
 
 -- utils
@@ -35,18 +34,17 @@ local function parse_dn (dn)
 	return t
 end
 
-local MtlsAuth = BasePlugin:extend()
+local MtlsAuth = {
+  PRIORITY = 975, -- set the plugin priority, which determines plugin execution order
+  VERSION = "1.0.0", -- version in X.Y.Z format. Check hybrid-mode compatibility requirements.
+}
 
-MtlsAuth.VERSION = "1.0.0"
-MtlsAuth.PRIORITY = 975
-
-function MtlsAuth:new()
-    MtlsAuth.super.new(self, "mtls-auth")
+function MtlsAuth:init_worker()
+	kong.log.debug("saying hi from the 'init_worker' handler")    	
 end
 
 function MtlsAuth:access(config)
-    MtlsAuth.super.access(self)
-
+    
     if ngx.var.ssl_client_verify ~= "SUCCESS" then
         kong.response.exit(config.error_response_code, [[{"error":"invalid_request", "error_description": "mTLS client not provided or invalid"}]], {
             ["Content-Type"] = "application/json"
