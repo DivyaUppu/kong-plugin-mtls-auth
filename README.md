@@ -14,11 +14,11 @@ The implementation of this plugin was inspired by the
 
 If you're using `luarocks` execute the following:
 
-    luarocks install kong-plugin-mtls-auth
+    luarocks install kong-plugin-mtls-test
 
 You also need to set the `KONG_PLUGINS` environment variable
 
-    export KONG_PLUGINS=mtls-auth
+    export KONG_PLUGINS=mtls-test
 
 ## Configuration
 
@@ -30,13 +30,13 @@ Configure nginx to use verify client certificate in `kong.conf`:
 To enable the plugin only for one service:
 
     curl -X POST http://localhost:8001/services/{ID}/plugins \
-        --data "name=mtls-auth"  \
+        --data "name=mtls-test"  \
         --data "config.upstream_cert_cn_header=X-Client-Cert-San"
 
 To enable the plugin using declarative config in `kong.yml`:
 
     plugins: 
-    - name: mtls-auth
+    - name: mtls-test
       config:
         upstream_cert_cn_header: "X-Client-Cert-San"
 
