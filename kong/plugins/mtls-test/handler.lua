@@ -44,7 +44,12 @@ function MtlsAuth:init_worker()
 end
 
 function MtlsAuth:access(config)
-    
+    kong.log.info("Config")
+    kong.log.info(config)
+    kong.log.info("Nginx var")
+    kong.log.info(ngx.var)
+    kong.log.info("ngx.var.ssl_client_verify")
+    kong.log.info(ngx.var.ssl_client_verify)
     if ngx.var.ssl_client_verify ~= "SUCCESS" then
         kong.response.exit(config.error_response_code, [[{"error":"invalid_request", "error_description": "mTLS client not provided or invalid"}]], {
             ["Content-Type"] = "application/json"
